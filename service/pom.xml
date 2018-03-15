@@ -11,5 +11,12 @@
 
     <artifactId>service</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.switchfully.rest</groupId>
+            <artifactId>domain</artifactId>
+        </dependency>
+    </dependencies>
+
 
 </project>

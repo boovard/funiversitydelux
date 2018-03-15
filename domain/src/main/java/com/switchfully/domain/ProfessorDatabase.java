@@ -13,8 +13,8 @@ public class ProfessorDatabase {
 
     public ProfessorDatabase() {
         this.professorMap = new HashMap<>();
-        storeNewProfessor(new Professor("Stephen", "Hawking"));
-        storeNewProfessor(new Professor("Neil", "deGrasse Tyson"));
+        storeNewProfessor(new ProfessorBuilder().setFirstName("Stephen").setLastName("Hawking").createProfessor());
+        storeNewProfessor(new ProfessorBuilder().setFirstName("Neil").setLastName("deGrasse Tyson").createProfessor());
     }
 
     public Map<Integer, Professor> getProfessorMap() {

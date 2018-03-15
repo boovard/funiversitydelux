@@ -3,15 +3,13 @@ package com.switchfully.domain;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class ProfessorDatabaseTest {
 
     @Test
     public void updateProfessor_shouldReturnUpdatedProfessor() {
         ProfessorDatabase testDatabase = new ProfessorDatabase();
-        Professor stephen = new Professor("Stephen", "Mohawking");
-        Professor expectedProfessor = new Professor("Stephen", "Hawking");
+        Professor stephen = new ProfessorBuilder().setFirstName("Stephen").setLastName("Mohawking").createProfessor();
+        Professor expectedProfessor = new ProfessorBuilder().setFirstName("Stephen").setLastName("Hawking").createProfessor();
         testDatabase.storeNewProfessor(stephen);
         Assertions.assertThat(testDatabase.updateProfessor(expectedProfessor)).isEqualTo(expectedProfessor);
     }
@@ -19,7 +17,7 @@ public class ProfessorDatabaseTest {
     @Test
     public void updateProfessor_shouldReplaceOldProfessorWithNewProfessor() {
         ProfessorDatabase testDatabase = new ProfessorDatabase();
-        Professor stephen = new Professor("Stephen", "Mohawking");
+        Professor stephen = new ProfessorBuilder().setFirstName("Stephen").setLastName("Mohawking").createProfessor();
         stephen.setId(1);
 
         testDatabase.updateProfessor(stephen);

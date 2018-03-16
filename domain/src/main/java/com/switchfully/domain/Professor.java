@@ -74,6 +74,7 @@ public class Professor {
         }
 
         public Professor build() {
+            //TODO shouldn't we add the professor to the database automatically?
             return new Professor(firstName, lastName);
         }
     }

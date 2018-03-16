@@ -22,6 +22,13 @@ public class CourseMapper {
     }
 
     public Course toDomain(CourseDto courseDto) {
-        return null;
+        return Course.CourseBuilder.course()
+                .withId(courseDto.getCourseId())
+                .withName(courseDto.getName())
+                .withstudyPoints(courseDto.getStudyPoints())
+                .withCategory(courseDto.getCategory())
+                //TODO not OK, instead we should get the professor from the database based on the provided ID
+                .withProfessor(professorMapper.toDomain(courseDto.getProfessor()))
+                .build();
     }
 }

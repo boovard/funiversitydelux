@@ -1,9 +1,7 @@
 package com.switchfully.domain;
 
 import javax.inject.Named;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @Named
 public class ProfessorDatabase {
@@ -17,8 +15,8 @@ public class ProfessorDatabase {
         storeNewProfessor(new ProfessorBuilder().setFirstName("Neil").setLastName("deGrasse Tyson").createProfessor());
     }
 
-    public Map<Integer, Professor> getProfessorMap() {
-        return Collections.unmodifiableMap(professorMap);
+    public List<Professor> getProfessors() {
+        return Collections.unmodifiableList(new ArrayList<>(professorMap.values()));
     }
 
     public Professor getProfessor(int id){

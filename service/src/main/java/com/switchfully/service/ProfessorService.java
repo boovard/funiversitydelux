@@ -5,7 +5,7 @@ import com.switchfully.domain.ProfessorDatabase;
 
 import javax.inject.Inject;
 import javax.inject.Named;
-import java.util.Map;
+import java.util.List;
 
 @Named
 public class ProfessorService {
@@ -16,8 +16,8 @@ public class ProfessorService {
         this.professorDatabase = professorDatabase;
     }
 
-    public Map<Integer, Professor> getProfessors() {
-        return professorDatabase.getProfessorMap();
+    public List<Professor> getProfessors() {
+        return professorDatabase.getProfessors();
     }
 
     public Professor getProfessor(int id){

@@ -15,7 +15,6 @@ public class ProfessorMapper {
 
     public Professor toDomain(ProfessorDto professorDto) {
         return Professor.ProfessorBuilder.professor()
-                .withId(professorDto.getId())
                 .withFirstName(professorDto.getFirstName())
                 .withLastName(professorDto.getLastName())
                 .build();

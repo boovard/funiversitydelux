@@ -1,41 +1,38 @@
 package com.switchfully.api;
 
-import javax.inject.Named;
-
-@Named
-public class CourseDto {
+public class CourseDomainDto {
     private int courseId;
     private String name;
     private double studyPoints;
     private String category;
-    private ProfessorDto professor;
+    private int professorId;
 
-    public static CourseDto courseDto() {
-        return new CourseDto();
+    public static CourseDomainDto courseDto() {
+        return new CourseDomainDto();
     }
 
-    public CourseDto withCourseId(int courseId) {
+    public CourseDomainDto withCourseId(int courseId) {
         this.courseId = courseId;
         return this;
     }
 
-    public CourseDto withName(String name){
+    public CourseDomainDto withName(String name){
         this.name = name;
         return this;
     }
 
-    public CourseDto withStudyPoints(double studyPoints){
+    public CourseDomainDto withStudyPoints(double studyPoints){
         this.studyPoints = studyPoints;
         return this;
     }
 
-    public CourseDto withCategory(String category) {
+    public CourseDomainDto withCategory(String category) {
         this.category = category;
         return this;
     }
 
-    public CourseDto withProfessor(ProfessorDto professor) {
-        this.professor = professor;
+    public CourseDomainDto withProfessorId(int professorId) {
+        this.professorId = professorId;
         return this;
     }
 
@@ -53,9 +50,5 @@ public class CourseDto {
 
     public String getCategory() {
         return category;
-    }
-
-    public ProfessorDto getProfessor() {
-        return professor;
     }
 }

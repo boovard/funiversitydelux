@@ -28,4 +28,24 @@ public class Course {
     public void setProfessor(Professor professor) {
         this.professor = professor;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getStudyPoints() {
+        return studyPoints;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public Professor getProfessor() {
+        return professor;
+    }
+
+    public static class CourseBuilder {
+
+    }
 }

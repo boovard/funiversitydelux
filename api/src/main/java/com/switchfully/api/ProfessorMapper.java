@@ -2,6 +2,9 @@ package com.switchfully.api;
 
 import com.switchfully.domain.Professor;
 
+import javax.inject.Named;
+
+@Named
 public class ProfessorMapper {
     public ProfessorDto toDto(Professor professor) {
         return ProfessorDto.professorDto()

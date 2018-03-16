@@ -10,47 +10,35 @@ import javax.inject.Named;
 import java.util.Map;
 
 @Named
-public class FuniversityService {
+public class CourseService {
 
-    private ProfessorDatabase professorDatabase;
+    private ProfessorService professorService;
     private CourseDatabase courseDatabase;
 
     @Inject
-    public FuniversityService(ProfessorDatabase professorDatabase, CourseDatabase courseDatabase) {
-        this.professorDatabase = professorDatabase;
+    public CourseService(ProfessorService professorService, CourseDatabase courseDatabase) {
+        this.professorService = professorService;
         this.courseDatabase = courseDatabase;
-    }
-
-    public Map<Integer, Professor> getProfessors() {
-        return professorDatabase.getProfessorMap();
     }
 
     public Map<Integer, Course> getCourses() {
         return courseDatabase.getCourses();
     }
 
+    public Course getCourse(int id) {
+        return courseDatabase.getCourse(id);
+    }
+
     public Course storeCourse(Course course, int professorId) {
-        course.setProfessor(professorDatabase.getProfessor(professorId));
+        course.setProfessor(professorService.getProfessor(professorId));
         return courseDatabase.storeNewCourse(course);
     }
 
-    public Professor storeProfessor(Professor professor) {
-        return professorDatabase.storeNewProfessor(professor);
-    }
-
-    public Professor updateProfessor(Professor professor){
-        return professorDatabase.updateProfessor(professor);
-    }
-
-    public Course updateCourse(Course course){
+    public Course updateCourse(Course course) {
         return courseDatabase.updateCourse(course);
     }
 
-    public void deleteProfessor(int id){
-        professorDatabase.deleteProfessor(id);
-    }
-
-    public void deleteCourse(int id){
+    public void deleteCourse(int id) {
         courseDatabase.deleteCourse(id);
     }
 }

@@ -20,6 +20,10 @@ public class ProfessorService {
         return professorDatabase.getProfessorMap();
     }
 
+    public Professor getProfessor(int id){
+        return professorDatabase.getProfessor(id);
+    }
+
     public Professor storeProfessor(Professor professor) {
         return professorDatabase.storeNewProfessor(professor);
     }

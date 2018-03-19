@@ -1,9 +1,7 @@
 package com.switchfully.domain;
 
-import javax.inject.Named;
 import java.util.Objects;
 
-@Named
 public class Professor {
 
     private int id;

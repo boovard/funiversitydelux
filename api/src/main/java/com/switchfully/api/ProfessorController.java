@@ -40,6 +40,17 @@ public class ProfessorController {
     @ResponseStatus(HttpStatus.OK)
     public ProfessorDto createProfessor(ProfessorDto professorDto) {
         return professorMapper.toDto(professorService.storeProfessor(professorMapper.toDomain(professorDto)));
+    }
 
+    @PutMapping(path = "/{id}", consumes = APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public ProfessorDto updateProfessor(@PathVariable Integer id, @RequestBody ProfessorDto professorDto) {
+        return professorMapper.toDto(professorService.updateProfessor(professorMapper.toDomain(professorDto)));
+    }
+
+    @DeleteMapping(path = "/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteProfessor(@PathVariable Integer id) {
+        professorService.deleteProfessor(id);
     }
 }

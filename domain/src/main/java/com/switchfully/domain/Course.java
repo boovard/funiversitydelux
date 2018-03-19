@@ -1,8 +1,5 @@
 package com.switchfully.domain;
 
-import javax.inject.Named;
-
-@Named
 public class Course {
 
     private int id;
